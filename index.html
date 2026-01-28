@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUAT BIKIN MEME & STIKER WA </title>
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="app-container">
+        <header>
+            <h1>Meme<span class="gradient-text">Master</span></h1>
+            <p>Buat meme & stiker WhatsApp dalam detik.</p>
+        </header>
+
+        <div class="editor-grid">
+            <!-- Canvas / Preview Area -->
+            <div class="preview-area">
+                <div class="canvas-wrapper">
+                    <canvas id="memeCanvas"></canvas>
+                    <div id="dropZone" class="drop-zone">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-image">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        <p>Tarik gambar ke sini atau klik untuk upload</p>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls Area -->
+            <div class="controls-area glass-panel">
+                <div class="control-group">
+                    <label for="topText">Teks Atas</label>
+                    <input type="text" id="topText" placeholder="CONTOH: KETIKA KAMU...">
+                </div>
+
+                <div class="control-group">
+                    <label for="bottomText">Teks Bawah</label>
+                    <input type="text" id="bottomText" placeholder="LUPA SAVE CODINGAN">
+                </div>
+
+                <div class="settings-grid">
+                    <div class="control-group">
+                        <label for="fontSize">Ukuran Font</label>
+                        <input type="range" id="fontSize" min="20" max="100" value="40">
+                    </div>
+                    <div class="control-group">
+                        <label for="textColor">Warna</label>
+                        <div class="color-picker-wrapper">
+                            <input type="color" id="textColor" value="#ffffff">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="stickerMode" checked>
+                        <span class="checkmark"></span>
+                        Mode Stiker WA (512x512)
+                    </label>
+                </div>
+
+                <div class="actions">
+                    <button id="downloadBtn" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download Stiker (.webp)
+                    </button>
+                    <button id="downloadMemeBtn" class="btn btn-secondary">
+                        Downloads Gambar Biasa (.png)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
